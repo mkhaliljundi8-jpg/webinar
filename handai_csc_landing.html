@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dari 0 ke 100JT Pertama, Emang Bisa? | Handai Coffee × CSC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #F4F7F4;
+      color: #0D2B0D;
+      overflow-x: hidden;
+    }
+
+    /* ─── TOPBAR ─── */
+    .topbar {
+      background: #1A5C1A;
+      padding: 11px 20px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.02em;
+    }
+    .topbar b {
+      background: #FBBF24;
+      color: #78350F;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-left: 8px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    /* ─── NAV ─── */
+    .nav {
+      background: #fff;
+      padding: 14px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #E2EDE2;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logos { display: flex; align-items: center; gap: 10px; }
+    .logo-box {
+      background: #1A5C1A;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+    }
+    .logo-box.light { background: #E8F2E8; color: #1A5C1A; }
+    .nav-x { font-size: 12px; color: #9CA3AF; font-weight: 700; }
+    .nav-cta {
+      background: #1A5C1A;
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: #145214; }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: #fff;
+      padding: 60px 32px 44px;
+      text-align: center;
+      border-bottom: 1px solid #E2EDE2;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .event-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #E8F2E8;
+      border: 1px solid #A3C8A3;
+      border-radius: 100px;
+      padding: 6px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #1A5C1A;
+      letter-spacing: 0.06em;
+      margin-bottom: 20px;
+    }
+    .badge-dot {
+      width: 7px; height: 7px;
+      background: #22C55E;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .hero-kw {
+      font-size: 13px;
+      font-weight: 600;
+      color: #6B7280;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .hero-h1 {
+      font-size: 44px;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #0D2B0D;
+      margin-bottom: 12px;
+    }
+    .hero-h1 .green { color: #1A5C1A; }
+    .hero-tagline {
+      font-style: italic;
+      font-size: 15px;
+      color: #4B7A4B;
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    .detail-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 20px 0 26px;
+    }
+    .detail-pill {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: #F0F7F0;
+      border: 1px solid #C6DFC6;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1A5C1A;
+    }
+    .detail-pill svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+    .pain-box {
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin: 0 0 8px;
+      text-align: left;
+    }
+    .pain-box p {
+      font-size: 14px;
+      color: #9CA3AF;
+      line-height: 1.7;
+      margin-bottom: 5px;
+    }
+    .pain-box s { color: #D1D5DB; }
+    .pain-resolve {
+      font-size: 16px;
+      font-weight: 800;
+      color: #1A5C1A;
+      margin-top: 14px;
+      line-height: 1.4;
+    }
+
+    /* ─── PRICE ─── */
+    .price-section {
+      background: #fff;
+      padding: 0 32px 36px;
+    }
+    .price-card {
+      background: #0D2B0D;
+      border-radius: 18px;
+      padding: 32px 28px;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .price-old {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      text-decoration: line-through;
+      margin-bottom: 6px;
+    }
+    .price-main {
+      font-size: 58px;
+      font-weight: 900;
+      color: #FBBF24;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .price-main sup { font-size: 20px; vertical-align: super; }
+    .price-note {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      margin: 8px 0 22px;
+    }
+    .cta-btn {
+      display: block;
+      background: #22C55E;
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      padding: 17px 24px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      animation: pulse-green 2.5s ease-in-out infinite;
+    }
+    .cta-btn:hover { background: #16A34A; transform: scale(1.02); }
+    .cta-btn:active { transform: scale(0.98); }
+    @keyframes pulse-green {
+      0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.3); }
+      50%      { box-shadow: 0 0 0 12px rgba(34,197,94,0); }
+    }
+    .cta-link-text {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      margin-top: 12px;
+    }
+    .cta-link-text a { color: #86EFAC; text-decoration: none; }
+
+    /* ─── SOCIAL PROOF ─── */
+    .sp-section {
+      background: #1A5C1A;
+      padding: 28px 32px;
+    }
+    .sp-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .sp-val { font-size: 28px; font-weight: 900; color: #FBBF24; }
+    .sp-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.55);
+      margin-top: 3px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    /* ─── GENERIC SECTION ─── */
+    .sec {
+      padding: 44px 32px;
+      background: #F4F7F4;
+    }
+    .sec.alt { background: #fff; }
+    .sec-inner { max-width: 640px; margin: 0 auto; }
+
+    .sec-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #1A5C1A;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .sec-tag::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #D1E7D1;
+    }
+    .sec-h2 {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 22px;
+      color: #0D2B0D;
+    }
+    .sec-h2 .accent { color: #1A5C1A; }
+
+    /* ─── BENEFITS ─── */
+    .ben-grid { display: grid; gap: 10px; }
+    .ben {
+      background: #F4F7F4;
+      border: 1px solid #D1E7D1;
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      transition: border-color 0.2s;
+    }
+    .ben:hover { border-color: #4CAF50; }
+    .ben.star {
+      background: #E8F2E8;
+      border: 1.5px solid #22C55E;
+    }
+    .ben-icon {
+      width: 38px; height: 38px;
+      border-radius: 8px;
+      background: #E8F2E8;
+      border: 1px solid #A3C8A3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 17px;
+    }
+    .ben.star .ben-icon {
+      background: #1A5C1A;
+      border: none;
+      font-size: 16px;
+      color: #fff;
+      font-weight: 900;
+    }
+    .ben-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; color: #0D2B0D; }
+    .ben.star .ben-title { color: #1A5C1A; }
+    .ben-desc { font-size: 13px; color: #6B7280; line-height: 1.6; }
+
+    /* ─── MATERI ─── */
+    .materi-list { display: grid; gap: 8px; }
+    .mat-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 18px;
+      background: #fff;
+      border: 1px solid #D1E7D1;
+      border-radius: 10px;
+    }
+    .mat-num {
+      width: 28px; height: 28px;
+      border-radius: 6px;
+      background: #1A5C1A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .mat-title { font-size: 14px; font-weight: 600; color: #0D2B0D; }
+    .mat-sub { font-size: 12px; color: #6B7280; margin-top: 3px; line-height: 1.5; }
+
+    /* ─── HOOK CARDS ─── */
+    .hook-grid { display: grid; gap: 10px; }
+    .hk {
+      background: #fff;
+      border: 1px solid #D1E7D1;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .hk.featured {
+      background: #0D2B0D;
+      border-color: #1A5C1A;
+    }
+    .hk-pill {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .hk-pill.rel { background: #FEE2E2; color: #B91C1C; }
+    .hk-pill.truth { background: #FEF3C7; color: #92400E; }
+    .hk-pill.reframe { background: #DCFCE7; color: #166534; }
+    .hk-quote { font-size: 16px; font-weight: 700; line-height: 1.5; margin-bottom: 8px; color: #0D2B0D; }
+    .hk.featured .hk-quote { color: #FBBF24; }
+    .hk-sub { font-size: 13px; color: #6B7280; line-height: 1.6; }
+    .hk.featured .hk-sub { color: rgba(255,255,255,0.45); }
+
+    /* ─── REALITY SLAP ─── */
+    .rage-card {
+      background: #fff;
+      border: 1px solid #E5E7EB;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .rage-item {
+      padding: 16px 20px;
+      border-bottom: 1px solid #F3F4F6;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .rage-item:last-child { border-bottom: none; }
+    .rage-num {
+      font-size: 10px;
+      font-weight: 800;
+      color: #DC2626;
+      background: #FEE2E2;
+      border-radius: 5px;
+      padding: 3px 9px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .rage-text { font-size: 14px; font-weight: 500; line-height: 1.6; color: #374151; }
+
+    /* ─── SPEAKERS ─── */
+    .speakers-grid { display: grid; gap: 12px; }
+    .spk-card {
+      background: #F4F7F4;
+      border: 1px solid #D1E7D1;
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .spk-ava {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: #E8F2E8;
+      border: 2px solid #1A5C1A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 800;
+      color: #1A5C1A;
+      flex-shrink: 0;
+    }
+    .spk-role-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      background: #E8F2E8;
+      color: #1A5C1A;
+      padding: 2px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .spk-name { font-size: 16px; font-weight: 800; color: #0D2B0D; margin-bottom: 3px; }
+    .spk-title { font-size: 12px; color: #4B7A4B; font-weight: 600; margin-bottom: 8px; }
+    .spk-bio { font-size: 13px; color: #6B7280; line-height: 1.6; }
+    .spk-bio strong { color: #1A5C1A; }
+
+    /* ─── URGENCY ─── */
+    .urgency-wrap { padding: 0 32px 44px; background: #F4F7F4; }
+    .urgency-card {
+      background: #1A5C1A;
+      border-radius: 18px;
+      padding: 32px 28px;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .urg-title { font-size: 24px; font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 10px; }
+    .urg-sub { font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+    .cta-yellow {
+      display: block;
+      background: #FBBF24;
+      color: #78350F;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      padding: 17px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .cta-yellow:hover { background: #F59E0B; }
+
+    /* ─── FINAL CTA ─── */
+    .final-section { padding: 44px 32px; background: #fff; }
+    .final-card {
+      background: #0D2B0D;
+      border-radius: 18px;
+      padding: 32px 28px;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .final-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #86EFAC;
+      margin-bottom: 14px;
+    }
+    .final-h {
+      font-size: 26px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .final-h span { color: #FBBF24; }
+    .final-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .final-note {
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+      margin-top: 12px;
+    }
+
+    /* ─── MEDIA PARTNER ─── */
+    .mp-section {
+      background: #fff;
+      padding: 24px 32px 28px;
+      border-top: 1px solid #E2EDE2;
+    }
+    .mp-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #9CA3AF;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .mp-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      align-items: center;
+    }
+    .mp-logo {
+      background: #F3F4F6;
+      border-radius: 6px;
+      padding: 5px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #6B7280;
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #0D2B0D;
+      padding: 24px 32px;
+      text-align: center;
+    }
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+    .f-logo { font-size: 14px; font-weight: 800; color: #86EFAC; letter-spacing: 0.04em; }
+    .f-x { color: rgba(255,255,255,0.2); font-size: 12px; }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,0.25); line-height: 1.8; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 500px) {
+      .hero-h1 { font-size: 32px; }
+      .price-main { font-size: 46px; }
+      .detail-row { gap: 8px; }
+      .detail-pill { font-size: 12px; padding: 6px 12px; }
+      .nav { padding: 12px 16px; }
+      .sec { padding: 36px 20px; }
+      .price-section { padding: 0 20px 32px; }
+      .urgency-wrap { padding: 0 20px 36px; }
+      .final-section { padding: 36px 20px; }
+      .mp-section { padding: 20px; }
+      footer { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BLOK 1: TOPBAR URGENCY -->
+  <div class="topbar">
+    ⏰ Webinar · Sabtu, 02 Mei 2026 · 08.00 WIB
+    <b>Rp 15.000 Aja</b>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-logos">
+      <div class="logo-box">CSC</div>
+      <span class="nav-x">×</span>
+      <div class="logo-box light">Handai Coffee</div>
+    </div>
+    <a href="#daftar" class="nav-cta">Daftar Sekarang</a>
+  </nav>
+
+  <!-- BLOK 2: HERO + HOOK -->
+  <section class="hero">
+    <div class="event-badge">
+      <span class="badge-dot"></span>
+      Webinar Bisnis · Active Learning
+    </div>
+    <div class="hero-kw">Community Support Center Telkom × Handai Coffee</div>
+    <h1 class="hero-h1">
+      Dari 0 Rupiah ke<br>
+      <span class="green">100JT Pertama,</span><br>
+      Emang Bisa?
+    </h1>
+    <p class="hero-tagline">
+      "Framework sederhana buat mulai usaha di usia muda<br>
+      berdasarkan pengalaman nyata"
+    </p>
+
+    <div class="detail-row">
+      <div class="detail-pill">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="3" width="12" height="11" rx="2" stroke="#1A5C1A" stroke-width="1.5"/>
+          <path d="M5 1v4M11 1v4M2 7h12" stroke="#1A5C1A" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        Sabtu, 02 Mei 2026
+      </div>
+      <div class="detail-pill">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="8" cy="8" r="6" stroke="#1A5C1A" stroke-width="1.5"/>
+          <path d="M8 5v3.5l2 2" stroke="#1A5C1A" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        08.00 WIB – Selesai
+      </div>
+      <div class="detail-pill">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="4" width="14" height="9" rx="2" stroke="#1A5C1A" stroke-width="1.5"/>
+          <path d="M1 8l7 4 7-4" stroke="#1A5C1A" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        Live via Zoom
+      </div>
+    </div>
+
+    <div class="pain-box">
+      <p><s>"Nanti kalau udah punya modal dulu…"</s></p>
+      <p><s>"Nanti kalau udah siap beneran…"</s></p>
+      <p><s>"Takut rugi, mending nggak usah dulu…"</s></p>
+      <p class="pain-resolve">Masalahnya bukan modal. Lo cuma belum punya roadmap yang bener.</p>
+    </div>
+  </section>
+
+  <!-- BLOK 3: HARGA + CTA UTAMA -->
+  <section class="price-section">
+    <div style="height:20px;"></div>
+    <div class="price-card">
+      <div class="price-old">Nilai materi &amp; tools: Rp 500.000+</div>
+      <div class="price-main"><sup>Rp</sup>15.000</div>
+      <div class="price-note">Lebih murah dari parkiran — tapi hasilnya roadmap bisnis lo</div>
+      <a href="#daftar" class="cta-btn">🚀 Daftar Sekarang — Rp 15.000</a>
+      <p class="cta-link-text">
+        Link pendaftaran:
+        <a href="https://bit.ly/BizDev-HandaiCSC" target="_blank">bit.ly/BizDev-HandaiCSC</a>
+      </p>
+    </div>
+    <div style="height:24px;"></div>
+  </section>
+
+  <!-- BLOK 4: SOCIAL PROOF -->
+  <section class="sp-section">
+    <div class="sp-row">
+      <div><div class="sp-val">500+</div><div class="sp-label">Peserta</div></div>
+      <div><div class="sp-val">7</div><div class="sp-label">Langkah Nyata</div></div>
+      <div><div class="sp-val">100%</div><div class="sp-label">Praktek Langsung</div></div>
+    </div>
+  </section>
+
+  <!-- BLOK 5: BENEFIT -->
+  <section class="sec alt">
+    <div class="sec-inner">
+      <div class="sec-tag">Yang kamu dapatkan</div>
+      <h2 class="sec-h2">Bukan sekadar nonton — lo <span class="accent">langsung punya tools-nya</span></h2>
+      <div class="ben-grid">
+        <div class="ben star">
+          <div class="ben-icon">★</div>
+          <div>
+            <div class="ben-title">Template Proyeksi Keuangan (Aset Eksklusif)</div>
+            <div class="ben-desc">File siap pakai untuk menghitung &amp; merancang proyeksi keuangan bisnis. Tahu persis apakah ide lo feasible dari sisi angka.</div>
+          </div>
+        </div>
+        <div class="ben">
+          <div class="ben-icon">⚡</div>
+          <div>
+            <div class="ben-title">Active Learning &amp; Case Study</div>
+            <div class="ben-desc">Praktik langsung memahami eksekusi bisnis nyata dan cara menghindari kesalahan fatal yang sering dilakukan pemula.</div>
+          </div>
+        </div>
+        <div class="ben">
+          <div class="ben-icon">🌱</div>
+          <div>
+            <div class="ben-title">Akses Jalur Inkubasi Bisnis di CSC (Selected Only)</div>
+            <div class="ben-desc">Kesempatan eksklusif masuk ke dalam ekosistem bisnis CSC Telkom University. Nggak semua orang bisa dapat ini.</div>
+          </div>
+        </div>
+        <div class="ben">
+          <div class="ben-icon">🎓</div>
+          <div>
+            <div class="ben-title">E-Sertifikat &amp; Free Recording</div>
+            <div class="ben-desc">Sertifikat valid untuk poin TAK Mahasiswa Tel-U. Plus free recording webinar bisa ditonton ulang kapanpun.</div>
+          </div>
+        </div>
+        <div class="ben">
+          <div class="ben-icon">🤝</div>
+          <div>
+            <div class="ben-title">Networking &amp; Akses Grup Praktik</div>
+            <div class="ben-desc">Relasi sesama peserta dan akses ke komunitas bisnis untuk terus tumbuh bareng setelah webinar selesai.</div>
+          </div>
+        </div>
+        <div class="ben">
+          <div class="ben-icon">🎁</div>
+          <div>
+            <div class="ben-title">Total Doorprize Ratusan Ribu Rupiah</div>
+            <div class="ben-desc">Bayar 15rb, bisa balik modal bahkan untung dari doorprize yang disediakan. Worth it banget.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERI -->
+  <section class="sec">
+    <div class="sec-inner">
+      <div class="sec-tag">Poin materi</div>
+      <h2 class="sec-h2">5 hal yang langsung bisa <span class="accent">lo terapkan</span></h2>
+      <div class="materi-list">
+        <div class="mat-item">
+          <div class="mat-num">1</div>
+          <div>
+            <div class="mat-title">Cara Mulai Bisnis Tanpa Modal</div>
+            <div class="mat-sub">Strategi nyata mulai dari nol yang sudah terbukti</div>
+          </div>
+        </div>
+        <div class="mat-item">
+          <div class="mat-num">2</div>
+          <div>
+            <div class="mat-title">Mindset Pengusaha</div>
+            <div class="mat-sub">Ubah cara pikir sebelum mulai eksekusi</div>
+          </div>
+        </div>
+        <div class="mat-item">
+          <div class="mat-num">3</div>
+          <div>
+            <div class="mat-title">Langkah Menuju 100 Juta Pertama</div>
+            <div class="mat-sub">Framework sederhana dari pengalaman nyata</div>
+          </div>
+        </div>
+        <div class="mat-item">
+          <div class="mat-num">4</div>
+          <div>
+            <div class="mat-title">Hindari Kesalahan Fatal Pemula</div>
+            <div class="mat-sub">Case study nyata agar lo nggak mulai dari kesalahan</div>
+          </div>
+        </div>
+        <div class="mat-item">
+          <div class="mat-num">5</div>
+          <div>
+            <div class="mat-title">Metode Active Learning: Langsung Praktek!</div>
+            <div class="mat-sub">Bukan teori doang — lo langsung action di sesi ini</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOK 6: HOOK STORIES -->
+  <section class="sec alt">
+    <div class="sec-inner">
+      <div class="sec-tag">Kenapa harus sekarang</div>
+      <h2 class="sec-h2">Lo bukan kurang modal — <span class="accent">lo kurang roadmap</span></h2>
+      <div class="hook-grid">
+        <div class="hk">
+          <div class="hk-pill rel">Relatable</div>
+          <div class="hk-quote">"Gue nyesel nggak tahu cara ini lebih cepat."</div>
+          <div class="hk-sub">Bingung mulai dari mana · nunggu modal · coba-coba tanpa arah. Jangan ulang kesalahan yang sama.</div>
+        </div>
+        <div class="hk featured">
+          <div class="hk-pill truth">The Truth</div>
+          <div class="hk-quote">"Bukan kurang modal. Kurang roadmap."</div>
+          <div class="hk-sub">Di webinar ini lo dikasih framework konkret yang bisa langsung diterapkan — bahkan tanpa modal sekalipun.</div>
+        </div>
+        <div class="hk">
+          <div class="hk-pill reframe">Reframe</div>
+          <div class="hk-quote">"Invest 15rb sekarang, atau rugi jutaan karena salah langkah nanti."</div>
+          <div class="hk-sub">Ini bukan biaya. Ini penghematan dari kesalahan bisnis yang sudah bisa dihindari sejak awal.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOK 7: REALITY SLAP -->
+  <section class="sec">
+    <div class="sec-inner">
+      <div class="sec-tag">Masih ada alasan?</div>
+      <h2 class="sec-h2">Cermin buat lo <span class="accent">yang masih nunggu</span></h2>
+      <div class="rage-card">
+        <div class="rage-item">
+          <div class="rage-num">01</div>
+          <div class="rage-text">"Alesan modal terus, tapi roadmap bisnis nggak pernah dibuat."</div>
+        </div>
+        <div class="rage-item">
+          <div class="rage-num">02</div>
+          <div class="rage-text">Mau dapet 100 juta, tapi investasi belajar seharga parkir aja masih mikir.</div>
+        </div>
+        <div class="rage-item">
+          <div class="rage-num">03</div>
+          <div class="rage-text">Masalahnya bukan di uang. Masalahnya ada di mental dan arah yang belum jelas.</div>
+        </div>
+        <div class="rage-item">
+          <div class="rage-num">04</div>
+          <div class="rage-text">"Jangan mulai bisnis kalau masih takut rugi 15 ribu." — serius.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOK 8: SPEAKERS -->
+  <section class="sec alt">
+    <div class="sec-inner">
+      <div class="sec-tag">Fasilitator &amp; MC</div>
+      <h2 class="sec-h2">Belajar langsung dari <span class="accent">yang sudah buktiin</span></h2>
+      <div class="speakers-grid">
+        <div class="spk-card">
+          <div class="spk-ava">DP</div>
+          <div>
+            <div class="spk-role-badge">Master of Ceremony</div>
+            <div class="spk-name">Daniandra Prayudisty Ilham</div>
+            <div class="spk-title">CEO · @communitysupport.telu</div>
+            <div class="spk-bio">Memimpin Community Support Center Telkom University. Berpengalaman membangun <strong>ekosistem bisnis mahasiswa dari nol</strong> sampai terbentuk komunitas nyata.</div>
+          </div>
+        </div>
+        <div class="spk-card">
+          <div class="spk-ava">MH</div>
+          <div>
+            <div class="spk-role-badge">Fasilitator</div>
+            <div class="spk-name">Muhammad Hanif Suryana, A.Md.Kom</div>
+            <div class="spk-title">Owner · @handaicoffee</div>
+            <div class="spk-bio">Membangun Handai Coffee dari nol. Materi yang dibawakan bukan teori — tapi <strong>pengalaman nyata yang sudah terbukti berjalan</strong> di lapangan.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOK 9: URGENCY -->
+  <div class="urgency-wrap" style="padding-top:44px;">
+    <div class="urgency-card">
+      <div class="urg-title">Kursi terbatas.<br>Jangan nunggu "siap".</div>
+      <div class="urg-sub">
+        Semakin lo nunggu siap, semakin lo nggak akan mulai.<br>
+        Mulai sekarang dengan 15rb — dan lo sudah selangkah lebih maju dari ribuan orang yang masih mikir.
+      </div>
+      <a href="#daftar" class="cta-yellow">✅ Ambil Kursinya Sekarang</a>
+    </div>
+  </div>
+
+  <!-- BLOK 10: FINAL CTA -->
+  <section class="final-section" id="daftar">
+    <div class="final-card">
+      <div class="final-label">Daftar sekarang</div>
+      <div class="final-h">
+        Template + Sertifikat + Inkubasi + Doorprize.<br>
+        <span>Semua 15rb.</span>
+      </div>
+      <div class="final-sub">Webinar bisnis paling worth it. Nggak ada ruginya sama sekali.</div>
+      <a href="https://bit.ly/BizDev-HandaiCSC" target="_blank" class="cta-btn">🚀 Daftar Sekarang — Rp 15.000</a>
+      <p class="final-note">bit.ly/BizDev-HandaiCSC · Pembayaran aman · Akses langsung setelah daftar</p>
+    </div>
+  </section>
+
+  <!-- MEDIA PARTNER -->
+  <section class="mp-section">
+    <div class="mp-label">Media Partner</div>
+    <div class="mp-logos">
+      <div class="mp-logo">Telkom University</div>
+      <div class="mp-logo">Syamsul Ulum</div>
+      <div class="mp-logo">Al-Fikri</div>
+      <div class="mp-logo">Google Developer Groups</div>
+      <div class="mp-logo">SRC</div>
+      <div class="mp-logo">Digi Star</div>
+      <div class="mp-logo">Bandung Techno Park</div>
+      <div class="mp-logo">TEDx Telkom University</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logos">
+      <span class="f-logo">Community Support Center</span>
+      <span class="f-x">×</span>
+      <span class="f-logo">Handai Coffee</span>
+    </div>
+    <div class="footer-copy">
+      Dari 0 Rupiah ke 100JT Pertama, Emang Bisa? · Sabtu, 02 Mei 2026 · 08.00 WIB<br>
+      Live via Zoom Meeting · Investasi Rp 15.000 · bit.ly/BizDev-HandaiCSC
+    </div>
+  </footer>
+
+</body>
+</html>
